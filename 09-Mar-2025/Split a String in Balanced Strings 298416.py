@@ -1,0 +1,18 @@
+# Problem: Split a String in Balanced Strings - https://leetcode.com/problems/split-a-string-in-balanced-strings/
+
+class Solution:
+    def balancedStringSplit(self, s: str) -> int:
+        total = 0
+        lcnt = 0
+        rcnt = 0
+
+        for char in s:
+            if char == 'L':
+                lcnt += 1
+            else:
+                rcnt += 1
+            
+            if lcnt == rcnt:
+                total += 1
+        
+        return total
